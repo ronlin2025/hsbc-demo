@@ -73,17 +73,11 @@ public class LLMService {
         String language = getLanguageFromURL(false);
         String prompt = String.format(ALL_IN_ONE_PROMPT, language, url);
         String result = getLLMRecommendation(prompt);
-        System.out.println("");
-        System.out.println("Old asset recommendation:");
-        System.out.println(result);
         return getLLMRecommendation(prompt);
     }
 
     // Current asset recommendation pattern
     public String getAssetRecommendationWithAsync(boolean enableLanguageCache, boolean enableRecommendationCache) {
-        System.out.println("enableLanguageCache in getAssetRecommendationWithAsync: " + enableLanguageCache);
-        System.out.println("enableRecommendationCache in getAssetRecommendationWithAsync: " + enableRecommendationCache);
-
         if (enableRecommendationCache) {
             String cachedRecommendation = CacheManager.getRecommendationCache(url);
             if (cachedRecommendation != null) {
@@ -133,9 +127,6 @@ public class LLMService {
         String tail = "]}";
         result.append(tail);
         String resultString = result.toString();
-        System.out.println("");
-        System.out.println("Current asset recommendation:");
-        System.out.println(resultString);
 
         if (enableRecommendationCache) {
             CacheManager.setRecommendationCache(url, resultString);
@@ -188,9 +179,6 @@ public class LLMService {
                 JSONObject messageResponse = firstChoice.getJSONObject("message");
 
                 String result = messageResponse.getString("content");
-                System.out.println("");
-                System.out.println("prompt request: " + prompt);
-                System.out.println("prompt result: " + result);
                 return result;
             } else {
                 // Print error details
