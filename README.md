@@ -3,7 +3,7 @@
 - Pure Java for building ads copilot like practice. [Click here to visit the demo](http://103.144.32.3:8080/gpt/demo-ads-copilot-hsbc.html)
 - `Java/LLMService`: Java core libray for LLM service
 
-## Dell AI RAG demo:
+## HSBC AI RAG demo:
 - Use LlamaIndex to implement RAG practice. [Click here to visit the demo](http://103.144.32.3:8080/gpt/demo-rag-hsbc.html)
 - `RAG/hsbc-rag.py`: This script uses LlamaIndex to index and query documents, and it sets up a Flask web service to interact with the model.
 - `RAG/hsbc-rag/`: The directory where the documents or files you want to index are stored
